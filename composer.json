@@ -1,0 +1,12 @@
+{
+    "name": "lobster-php/registry",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Lobster\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">= 7.4"
+    }
+}
