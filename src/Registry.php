@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Lobster\App;
+namespace Lobster;
 
 
 final class Registry
