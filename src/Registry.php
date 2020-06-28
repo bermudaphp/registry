@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Lobster;
+namespace Bermuda\Registry;
 
 
 final class Registry
