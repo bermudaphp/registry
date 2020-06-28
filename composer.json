@@ -1,9 +1,9 @@
 {
-    "name": "lobster-php/registry",
+    "name": "Bermudaphp/registry",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Lobster\\": "src/"
+            "Bermuda\\Registry\\": "src/"
         }
     },
     "require": {
