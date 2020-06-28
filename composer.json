@@ -1,5 +1,5 @@
 {
-    "name": "Bermudaphp/registry",
+    "name": "bermudaphp/registry",
     "license": "MIT",
     "autoload": {
         "psr-4": {
