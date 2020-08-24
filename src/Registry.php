@@ -21,6 +21,16 @@ final class Registry
     {
         return static::$items[$key] = $value;
     }
+    
+    /**
+     * @param string $key
+     * @param $value
+     * @return mixed
+     */
+    public static function has(string $key)
+    {
+        return array_key_exists($key, static::$items);
+    }
 
     /**
      * @param string $key
