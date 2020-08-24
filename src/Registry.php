@@ -24,8 +24,7 @@ final class Registry
     
     /**
      * @param string $key
-     * @param $value
-     * @return mixed
+     * @return bool
      */
     public static function has(string $key)
     {
