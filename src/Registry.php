@@ -1,16 +1,10 @@
 <?php
 
-
 namespace Bermuda\Registry;
-
 
 final class Registry
 {
     private static array $items = [];
-
-    private function __construct()
-    {
-    }
 
     /**
      * @param string $key
