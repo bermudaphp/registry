@@ -89,6 +89,15 @@ final class Registry impliments \ArrayAccess, \IteratorAggregate, Arrayable
     {
         return self::getInstance()->offsetExists($key);
     }
+    
+    /**
+     * @param string $key
+     * @return bool
+     */
+    public static function remove(string $key): void
+    {
+        self::getInstance()->offsetUnset($key);
+    }
 
     /**
      * @param string $key
