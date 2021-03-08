@@ -7,9 +7,7 @@ final class Registry impliments \ArrayAccess, \IteratorAggregate, Arrayable
     private array $elements = [];
     private static ?Registry $instance = null;
     
-    private function __construct()
-    {
-    }
+    private function __construct(){}
     
     public static function getInstance(): self
     {
