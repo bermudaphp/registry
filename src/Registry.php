@@ -101,6 +101,6 @@ final class Registry implements \ArrayAccess, \IteratorAggregate
      */
     public static function get(string $key, $default = null)
     {
-        return static::getInstance()->elements[$key] ?? $default;
+        return static::getInstance()->offsetGet($key) ?? $default;
     }
 }
