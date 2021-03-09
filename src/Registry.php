@@ -2,7 +2,12 @@
 
 namespace Bermuda\Registry;
 
-final class Registry impliments \ArrayAccess, \IteratorAggregate, Arrayable
+/**
+ * Class Registry
+ * Superglobal key => value pairs storage
+ * @package Bermuda\Registry
+ */
+final class Registry implements \ArrayAccess, \IteratorAggregate
 {
     private array $elements = [];
     private static ?Registry $instance = null;
@@ -13,26 +18,18 @@ final class Registry impliments \ArrayAccess, \IteratorAggregate, Arrayable
     {
         if (self::$instance == null)
         {
-            self::$instance = new self()
+            self::$instance = new self();
         }
         
         return self::$instance;
     }
-    
-    /**
-     * @inheritDoc
-     */
-    public function toArray(): array
-    {
-        return $this->elements;
-    }
-    
+
     /**
      * @return ArrayIterator
      */
-    public function getIterator(): ArrayIterator
+    public function getIterator(): \Iterator
     {
-        return new ArrayIterator($this->elements);
+        return new \ArrayIterator($this->elements);
     }
     
     /**
@@ -41,7 +38,7 @@ final class Registry impliments \ArrayAccess, \IteratorAggregate, Arrayable
     public function offsetSet($offset, $value): void
     {
        $offset == null ? $this->elements[] = $value 
-           : $this->elements[$offset];
+           : $this->elements[$offset] = $value;
     }
 
     /**
@@ -105,13 +102,5 @@ final class Registry impliments \ArrayAccess, \IteratorAggregate, Arrayable
     public static function get(string $key, $default = null)
     {
         return static::getInstance()->elements[$key] ?? $default;
-    }
-    
-    /**
-     * @return array
-     */
-    public static function all(): array
-    {
-        return self::getInstance()->elements;
     }
 }
