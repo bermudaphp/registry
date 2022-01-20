@@ -15,13 +15,8 @@ final class Registry implements \ArrayAccess, \IteratorAggregate
     private function __construct(){}
     
     public static function getInstance(): self
-    {
-        if (self::$instance == null)
-        {
-            self::$instance = new self();
-        }
-        
-        return self::$instance;
+    { 
+        return self::$instance == null ? self::$instance = new self() : self::$instance;
     }
 
     /**
