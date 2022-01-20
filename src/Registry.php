@@ -27,7 +27,7 @@ final class Registry implements \ArrayAccess, \IteratorAggregate
     /**
      * @return ArrayIterator
      */
-    public function getIterator(): \Iterator
+    public function getIterator(): \ArrayIterator
     {
         return new \ArrayIterator($this->elements);
     }
@@ -52,7 +52,7 @@ final class Registry implements \ArrayAccess, \IteratorAggregate
     /**
      * @inheritDoc
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->elements[$offset]);
     }
@@ -60,7 +60,7 @@ final class Registry implements \ArrayAccess, \IteratorAggregate
     /**
      * @inheritDoc
      */
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         return $this->elements[$offset] ?? null;
     }
