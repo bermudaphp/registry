@@ -65,7 +65,7 @@ final class Registry implements \ArrayAccess, \IteratorAggregate
      * @param $value
      * @return mixed
      */
-    public static function set(string $key, $value)
+    public static function set(string $key, $value): mixed
     {
         self::getInstance()->offsetSet($key, $value);
         return $value;
@@ -92,9 +92,9 @@ final class Registry implements \ArrayAccess, \IteratorAggregate
     /**
      * @param string $key
      * @param null $default
-     * @return mixed|null
+     * @return mixed
      */
-    public static function get(string $key, $default = null)
+    public static function get(string $key, $default = null): mixed
     {
         return static::getInstance()->offsetGet($key) ?? $default;
     }
